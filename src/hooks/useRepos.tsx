@@ -4,7 +4,7 @@ type Repo = {
     name: string;
     description: string;
     html_url: string;
-    created_at: string;
+    updated_at: string;
 };
 
 const useRepos = (username: string, token: string): Repo[] => {
@@ -18,11 +18,28 @@ const useRepos = (username: string, token: string): Repo[] => {
                 },
             });
             const data = await response.json();
-            const sortedRepos = data.sort((a: { created_at: string | number | Date; }, b: { created_at: string | number | Date; }) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+            //~ Start Ik ben niet hier zelf op gekomen
+            const sortedRepos = data.sort((a: { updated_at: string | number | Date; }, b: { updated_at: string | number | Date; }) => {
+                const dateA = new Date(a.updated_at);
+                const dateB = new Date(b.updated_at);
+                return dateB.getTime() - dateA.getTime();
+            }).map((repo: { updated_at: string; } & Record<string, any>) => {
+                const date = new Date(repo.updated_at);
+                const formattedDate = date.toLocaleDateString("en-GB", {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                });
+                //~ End Ik ben niet hier zelf op gekomen
+                return {
+                    ...repo,
+                    updated_at: formattedDate,
+                };
+            });
 
             setRepos(sortedRepos);
-
         };
+
         fetchRepos();
     }, [username, token]);
 

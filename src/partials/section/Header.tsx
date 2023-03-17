@@ -16,9 +16,9 @@ export default function Header() {
                 </nav>
                 <nav className="hidden md:block">
                     <ul className="flex justify-end items-center">
-                        <li className="mx-4"><a href="#">tiger</a></li>
-                        <li className="mx-4"><a href="#">durive</a></li>
-                        <li className="mx-4"><a href="#">yoink</a></li>
+                        <li className="mx-4"><a href="#">Home</a></li>
+                        <li className="mx-4"><a href="#">Projects</a></li>
+                        <li className="mx-4"><a href="#">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -42,7 +42,7 @@ export default function Header() {
                                 <span className='text-sm font-bold text-amber-400 italic'>Junior Back End Developer</span>
                                 <h1 className="text-4xl font-bold mb-4 mt-8 text-white uppercase italic space-x-1">Safouane-M09</h1>
                                 <p className="mb-8 mt-4 text-white">
-                                    Here comes some text about me whilst i type some text about me could i continue typing text about me whilst typing text about me?
+                                    Hallo, ik ben Safouane, een derdejaars student aan Windesheim Almere met een diploma in AD Software Development
                                 </p>
                             </div>
                         </div>

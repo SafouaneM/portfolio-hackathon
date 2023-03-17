@@ -1,6 +1,6 @@
 import useRepos from "../hooks/useRepos";
 const Repos = () => {
-    const githubRepos = useRepos('safouanem','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')
+    const githubRepos = useRepos('safouanem','')
     console.log(githubRepos)
 
     return (
@@ -12,7 +12,6 @@ const Repos = () => {
                     <p>{repo.description}</p>
                     <a href={repo.html_url}>View on Github</a>
                 </div>
-
             ))}
         </div>
     );
