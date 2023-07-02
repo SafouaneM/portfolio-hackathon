@@ -1,28 +1,30 @@
 import useRepos from "../../hooks/useRepos";
 import ReadMe from "../../components/ReadMe";
-import React, {useState} from "react";
+import React from "react";
 import Email from "../../components/Email";
 import enTranslations from "../../translations/en.json";
 import nlTranslations from "../../translations/nl.json";
 
 const apiKey = process.env.REACT_APP_GHUBTOKEN  ?? 'public_key_that_does_not_exist';
 
+interface FeaturedProps {
+    language: string;
+}
 
-export default function Featured() {
+
+const Featured: React.FunctionComponent<FeaturedProps> = ({ language }) => {
     const githubRepos = useRepos("safouanem", apiKey);
     const featuredProject = githubRepos.find((repo) => repo.name === "Safouane.GG") as {
         name: string,
         description: string
     } || {name: "Featured Repository", description: "Very cool descirption"};
 
-    const [language, setLanguage] = useState("en");
     const translations = language === "en" ? enTranslations : nlTranslations;
 
 
     console.log(featuredProject.name)
     const latestRepos = githubRepos.slice(0, 4);
     console.log(githubRepos);
-
 
 
 
@@ -154,3 +156,5 @@ export default function Featured() {
         </div>
     );
 }
+
+export default Featured;

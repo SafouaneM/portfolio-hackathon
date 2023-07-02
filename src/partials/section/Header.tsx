@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import enTranslations from "../../translations/en.json";
 import nlTranslations from "../../translations/nl.json";
-export default function Header() {
+
+interface HeaderProps {
+    language: "en" | "nl";
+    toggleLanguage: () => void;
+}
+
+const Header: React.FunctionComponent<HeaderProps> = ({ language, toggleLanguage }) => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [language, setLanguage] = useState("en");
     const translations = language === "en" ? enTranslations : nlTranslations;
 
-    const toggleLanguage = () => {
-        setLanguage(language === "en" ? "nl" : "en");
-    };
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -160,3 +162,5 @@ export default function Header() {
 
     );
 }
+
+export default Header;
