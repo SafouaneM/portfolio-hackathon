@@ -21,7 +21,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({ language, toggleLanguage
         <div>
             <div className="sticky top-0 z-50 flex justify-between items-center bg-black px-5 py-4 text-white">
                 <div className="flex justify-start items-center">
-                    <img src="path/to/logo.png" alt="Logo" className="w-16 mr-4" />
+                        <p>Safouane Messaoudi</p>
                 </div>
                 <nav className="hidden md:flex justify-end items-center">
                     <ul className="flex justify-start items-start py-8 px-6 gap-8">
