@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-
+import enTranslations from "../../translations/en.json";
+import nlTranslations from "../../translations/nl.json";
 export default function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [language, setLanguage] = useState("en");
+    const translations = language === "en" ? enTranslations : nlTranslations;
+
+    const toggleLanguage = () => {
+        setLanguage(language === "en" ? "nl" : "en");
+    };
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
     };
+
 
     return (
         <div>
@@ -14,7 +22,7 @@ export default function Header() {
                     <img src="path/to/logo.png" alt="Logo" className="w-16 mr-4" />
                 </div>
                 <nav className="hidden md:flex justify-end items-center">
-                    <ul className="flex justify-start items-start py-8 px-6">
+                    <ul className="flex justify-start items-start py-8 px-6 gap-8">
                         <li className="mx-4">
                             <a href="/">Home</a>
                         </li>
@@ -24,6 +32,9 @@ export default function Header() {
                         <li className="mx-4">
                             <a href="#contact">Contact</a>
                         </li>
+                        <button className='language-toggle-button' onClick={toggleLanguage}>
+                            {language === "en" ? "🇬🇧 English" : "🇳🇱 Dutch"}
+                        </button>
                         <li>
                             <a
                                 href="https://drive.google.com/file/d/1GCGV-LowOKZEFH0HUkVbwdsSVO1hh8ZA/view?usp=sharing" target="_blank"
@@ -129,7 +140,7 @@ export default function Header() {
                                     Safouane-M09
                                 </h1>
                                 <p className="mb-8 mt-4 text-white">
-                                    Hallo, ik ben Safouane, een derdejaars student aan Windesheim Almere met een diploma in AD Software Development
+                                    {translations["short-description"]}
                                 </p>
                             </div>
                         </div>

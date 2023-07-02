@@ -1,0 +1,11 @@
+{
+  "short-description": "Hallo!, my name is Safouane, a third-year student at the University of Windesheim Almere with a diploma in AD Software Development",
+  "about-h": "About me",
+  "about-description": "Hello, my name is Safouane! As a graduate of the AD Software Developer program and a third-year HBO-ICT student, I have a strong foundation in back-end programming. But you know what? I'm also really into front-end development! Currently, I'm taking an awesome minor in Web Design & Development at HvA to enhance my front-end skills. I'm always eager to learn and I thoroughly enjoy solving problems, both for myself and others. In short, I'm the versatile developer you can rely on!",
+  "skill-description": "Here is a list of programming languages, frameworks & tools that I like to use a lot",
+  "skill-sub": "Underneath here you can see a grading list that I give to the tools and languages",
+  "skill-explain-g": "Amazing: ⭐️ (These tools are my favorite to work with, and I'm most experienced with",
+  "skill-explain-l": "Great: 🙂 (These tools I like working with and I'm quite confident with them)",
+  "skill-explain-n": "New: 🥳 (These tools I have only recently started working with)",
+  "contact": "Contact me :)"
+}

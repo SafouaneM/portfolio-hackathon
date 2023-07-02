@@ -1,7 +1,9 @@
 import useRepos from "../../hooks/useRepos";
 import ReadMe from "../../components/ReadMe";
-import React from "react";
+import React, {useState} from "react";
 import Email from "../../components/Email";
+import enTranslations from "../../translations/en.json";
+import nlTranslations from "../../translations/nl.json";
 
 const apiKey = process.env.REACT_APP_GHUBTOKEN  ?? 'public_key_that_does_not_exist';
 
@@ -12,10 +14,21 @@ export default function Featured() {
         name: string,
         description: string
     } || {name: "Featured Repository", description: "Very cool descirption"};
+
+    const [language, setLanguage] = useState("en");
+    const translations = language === "en" ? enTranslations : nlTranslations;
+
+
     console.log(featuredProject.name)
     const latestRepos = githubRepos.slice(0, 4);
     console.log(githubRepos);
+
+
+
+
+
     return (
+
         <div>
             <div className="relative bg-gradient-to-b from-gray-900 via-gray-800 to-gray-800">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black opacity-50"></div>
@@ -26,32 +39,22 @@ export default function Featured() {
                     {/*skill set here*/}
                     <div className="grid grid-cols-1 lg:grid-cols-3 mt-16 gap-8">
                         <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg shadow p-8">
-                            <h2 className="text-2xl font-bold mb-4 text-white">Over mij</h2>
+                            <h2 className="text-2xl font-bold mb-4 text-white">{translations["about-h"]}</h2>
                             <p className="text-gray-700 dark:text-gray-300 mb-8">
-                                Hoi, ik ben Safouane! Als afgestudeerd AD Software Developer en derdejaars HBO-ICT
-                                student, heb ik een stevige basis in back-end programmeren. Maar weet je wat? Ik ben ook
-                                helemaal into front-end ontwikkeling! Op dit moment volg ik een toffe minor Webdesign &
-                                Development aan de HvA. Om vooral mijn front end ontwikkeling omhoog te krikken.
-
-                                Ik ben altijd leergierig en vind het super om problemen op te lossen, voor mezelf én
-                                anderen. Kortom, ik ben die veelzijdige ontwikkelaar waar je op kunt rekenen!
+                                {translations["about-description"]}
                             </p>
                             <h2 className="text-2xl font-bold mb-4 text-white">Skill Set</h2>
                             <p className="text-gray-700 dark:text-gray-300 mb-8">
-                                Hier is een lijst met progammeertalen, frameworks & tools die ik graag gebruik en/of
-                                goed onder de knie heb
+                                {translations["skill-description"]}
                             </p>
                             <div className='mb-4'>
-                                <h3 className='text-1xl font-bold mb-4 text-white'>Hieronder volgt een rating die ik
-                                    geef over de onderstaande talen en tools</h3>
+                                <h3 className='text-1xl font-bold mb-4 text-white'>{translations["skill-sub"]}</h3>
                                 <ul className='text-white'>
-                                    <li>Geweldig: ⭐️ (Deze tools vind ik het leukst om mee te werken, en heb ik aardig
-                                        onder de knie)
+                                    <li>{translations["skill-explain-g"]}
                                     </li>
-                                    <li>Leuk: 🙂(Deze tools vind ik leuk om mee te werken en kan er aardig mee op weg)
+                                    <li>{translations["skill-explain-l"]}
                                     </li>
-                                    <li>Nieuw: 👶 (Deze tools heb ik mezelf recentelijk aangeleerd, en wil mij graag
-                                        hierin verder ontwikkelen)
+                                    <li>{translations["skill-explain-n"]}
                                     </li>
                                 </ul>
                             </div>
