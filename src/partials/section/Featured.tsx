@@ -40,13 +40,13 @@ const Featured: React.FunctionComponent<FeaturedProps> = ({ language }) => {
                     <ReadMe username='SafouaneM' repository='SafouaneM'></ReadMe>
                     {/*skill set here*/}
                     <div className="grid grid-cols-1 lg:grid-cols-3 mt-16 gap-8">
-                        <div className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg shadow p-8">
+                        <div className="lg:col-span-2 bg-gray-800 rounded-lg shadow p-8">
                             <h2 className="text-2xl font-bold mb-4 text-white">{translations["about-h"]}</h2>
-                            <p className="text-gray-700 dark:text-gray-300 mb-8">
+                            <p className=" text-gray-300 mb-8">
                                 {translations["about-description"]}
                             </p>
                             <h2 className="text-2xl font-bold mb-4 text-white">Skill Set</h2>
-                            <p className="text-gray-700 dark:text-gray-300 mb-8">
+                            <p className=" text-gray-300 mb-8">
                                 {translations["skill-description"]}
                             </p>
                             <div className='mb-4'>
@@ -82,13 +82,16 @@ const Featured: React.FunctionComponent<FeaturedProps> = ({ language }) => {
                         <div className="lg:col-span-1">
                             <div className="relative w-full h-64 lg:h-auto">
                                 <img
-                                    src="https://media.licdn.com/dms/image/D4E03AQEndnTwVCGuXQ/profile-displayphoto-shrink_200_200/0/1665769408223?e=1688601600&v=beta&t=biDT1jh9s3K9T5l9GQcjH4fLD0DjnTg7_sIsLu9UrdE"
+                                    src="/safouane.jpeg"
                                     alt="Safouane Messaoudi"
-                                    className="w-full h-full object-cover rounded-lg"
+                                    className="w-full h-full object-contain rounded-lg border border-gray-300 sm:object-cover sm:rounded-none"
                                 />
-                                <div className="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
+                                <div className="absolute inset-0 opacity-40 rounded-lg"></div>
                             </div>
                         </div>
+
+
+
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 pb-8" id='project'>
                         <div className="col-span-1 md:col-span-2 flex flex-col justify-center">

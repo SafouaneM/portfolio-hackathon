@@ -9,7 +9,7 @@ interface HeaderProps {
 
 const Header: React.FunctionComponent<HeaderProps> = ({ language, toggleLanguage }) => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const translations = language === "en" ? enTranslations : nlTranslations;
+    const translations = language === "nl" ? enTranslations : nlTranslations;
 
 
     const toggleMenu = () => {
@@ -34,7 +34,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({ language, toggleLanguage
                         <li className="mx-4">
                             <a href="#contact">Contact</a>
                         </li>
-                        <button className='language-toggle-button' onClick={toggleLanguage}>
+                        <button className='language-toggle-button ' onClick={toggleLanguage}>
                             {language === "en" ? "🇬🇧 English" : "🇳🇱 Dutch"}
                         </button>
                         <li>
